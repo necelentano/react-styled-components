@@ -9,18 +9,26 @@ import {
   SidebarRouterLink,
 } from './SidebarElements';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggleMobileMenu }) => {
   return (
-    <SidebarContainer>
-      <Icon>
+    <SidebarContainer isOpen={isOpen} onClick={toggleMobileMenu}>
+      <Icon onClick={toggleMobileMenu}>
         <CloseIcon />
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about">About</SidebarLink>
-          <SidebarLink to="discover">Discover</SidebarLink>
-          <SidebarLink to="services">Services</SidebarLink>
-          <SidebarLink to="signup">Sign Up</SidebarLink>
+          <SidebarLink to="about" onClick={toggleMobileMenu}>
+            About
+          </SidebarLink>
+          <SidebarLink to="discover" onClick={toggleMobileMenu}>
+            Discover
+          </SidebarLink>
+          <SidebarLink to="services" onClick={toggleMobileMenu}>
+            Services
+          </SidebarLink>
+          <SidebarLink to="signup" onClick={toggleMobileMenu}>
+            Sign Up
+          </SidebarLink>
         </SidebarMenu>
         <SidebarBtnWrapper>
           <SidebarRouterLink to="/signin">Sign In</SidebarRouterLink>
