@@ -5,6 +5,8 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
 
+import { homeObjOne } from '../components/InfoSection/data';
+
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,7 +18,7 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggleMobileMenu={toggleMobileMenu} />
       <Navbar toggleMobileMenu={toggleMobileMenu} />
       <HeroSection />
-      <InfoSection />
+      <InfoSection {...homeObjOne} />
     </>
   );
 };

@@ -15,24 +15,36 @@ import {
   Img,
 } from './InfoSectionElements';
 
-const InfoSection = () => {
+const InfoSection = ({
+  lightBg,
+  id,
+  imgStart,
+  topLine,
+  lightText,
+  headline,
+  darkText,
+  description,
+  buttonLabel,
+  img,
+  alt,
+}) => {
   return (
-    <InfoSectionContainer>
+    <InfoSectionContainer lightBg={lightBg} id={id}>
       <InfoSectionWrapper>
-        <InfoSectionRow>
+        <InfoSectionRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>TopLine</TopLine>
-              <Heading>Heading</Heading>
-              <Subtitle>Subtitle</Subtitle>
+              <TopLine>{topLine}</TopLine>
+              <Heading lightText={lightText}>{headline}</Heading>
+              <Subtitle darkText={darkText}>{description}</Subtitle>
               <BtnWrapper>
-                <Button to="home">Button</Button>
+                <Button to="home">{buttonLabel}</Button>
               </BtnWrapper>
             </TextWrapper>
           </Column1>
           <Column2>
             <ImgWrapper>
-              <Img />
+              <Img src={img} alt={alt} />
             </ImgWrapper>
           </Column2>
         </InfoSectionRow>
