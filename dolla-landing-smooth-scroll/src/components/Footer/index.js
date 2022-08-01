@@ -1,3 +1,5 @@
+import { animateScroll as scroll } from 'react-scroll';
+
 import {
   FooterContainer,
   FooterWrapper,
@@ -23,6 +25,10 @@ import {
 } from 'react-icons/fa';
 
 const Footer = () => {
+  const scrollToHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <FooterContainer>
       <FooterWrapper>
@@ -63,7 +69,9 @@ const Footer = () => {
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrapper>
-            <SocialLogo to="/">dolla</SocialLogo>
+            <SocialLogo to="/" onClick={scrollToHome}>
+              dolla
+            </SocialLogo>
             <WebsiteRights>
               dolla &copy; {new Date().getFullYear()} All rights reserved
             </WebsiteRights>
